@@ -28,7 +28,7 @@ mongoose.connect(
  
   
   app.use(require("./routes/workouts-routes.js"));
-
+  app.use(require("./routes/html-routes.js"));
 
 
 
