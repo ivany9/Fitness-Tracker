@@ -111,7 +111,7 @@ const workoutSeed = [
     ],
   },
   {
-    day: new Date(new Date().setDate(new Date().getDate() - 1)),
+  day: new Date(new Date().setDate(new Date().getDate() - 1)),
     exercises: [
       {
         type: 'resistance',
