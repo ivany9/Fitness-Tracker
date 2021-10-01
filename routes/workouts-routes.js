@@ -15,21 +15,17 @@ router.get("/api/workouts", (req, res) => {
       });
   });
 
-  router.put("/api/workouts/:id",(req,res) => {
+  router.put("/api/workouts/:id",({body},res) => {
    
-    db.Workout.findOneAndUpdate(
-      { _id: req.params.id },
-      {
-          $inc: { totalDuration: req.body.duration },
-          $push: { exercises: req.body }
-      },
-      { new: true }).then(dbWorkout => {
+      db.Work.create(body)
+        .then(({_id}) => db.Workout.findOneAndUpdate({}, { $push: { excercises: _id } }, { new: true }))
+        .then(dbWorkout => {
           res.json(dbWorkout);
-      }).catch(err => {
+        })
+        .catch(err => {
           res.json(err);
-      });
-
-});
+        });
+    });
 
   
   router.post("/api/workouts", ({body}, res) => {
