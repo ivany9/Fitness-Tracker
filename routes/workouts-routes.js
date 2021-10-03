@@ -71,17 +71,29 @@ router.get("/api/workouts", (req, res) => {
 
 router.get("/api/workouts/range", (req, res) => {
 
-  db.Workout.aggregate([
-    {
-      $addFields: {
-        totalWeight:{$sum :"$exercises.weight"},
-        
-      
-      }
-    }
-    ]) 
-    .then(dbWorkout => {
+
+    db.Workout.aggregate(
+      [
+        {
+          $match: {
+            day: {
+               $gte: new Date(new Date().setDate(new Date().getDate() - 7)),
+               $lte: new Date(new Date().setDate(new Date().getDate()-0)),
+                }}
+               
+
+         }, {
+          $addFields: {
+            totalDuration:{$sum :"$exercises.duration"},
+                      }  }
+             ]
+           )
+
+  .then(dbWorkout => {
       res.json(dbWorkout);
+
+      console.log(new Date(new Date().setDate(new Date().getDate() - 7)));
+      console.log(new Date(new Date().setDate(new Date().getDate()-0)));
     })
     .catch(err => {
       res.json(err);
