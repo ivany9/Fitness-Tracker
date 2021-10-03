@@ -77,8 +77,8 @@ router.get("/api/workouts/range", (req, res) => {
         {
           $match: {
             day: {
-               $gte: new Date(new Date().setDate(new Date().getDate() - 7)),
-               $lte: new Date(new Date().setDate(new Date().getDate()-0)),
+               $gte: new Date(new Date().setDate(new Date().getDate() - 8)),
+               $lte: new Date(new Date().setDate(new Date().getDate()-1)),
                 }}
                
 
