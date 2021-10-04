@@ -3,8 +3,7 @@
 
 # Deployed 
 
-Find the deployed application here:https://car-enthusiasts.herokuapp.com/
-
+Find the deployed application herehttps://fittness-track.herokuapp.com/
 ## Description
   
 This app is deployed in HEROKU usgin Atlas db,  the technology is mongo, it have one collection called Workout, and four ends points. Each end point have a query that allowes to get the information 
