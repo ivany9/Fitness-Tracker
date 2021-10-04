@@ -1,4 +1,4 @@
-# Tech-Blog
+# Fiteness- Tracker
 
 
 # Deployed 
@@ -64,6 +64,8 @@ As a user, I want to be able to view create and track daily workouts. I want to 
 
 ### Demo
 
+
+![coding](https://user-images.githubusercontent.com/83906297/135784857-01989cd5-1b06-450e-a189-088b1a3b1486.gif)
 
 ## Installation
 
